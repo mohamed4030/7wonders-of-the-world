@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Cairo', sans-serif;
+
+    background:
+    linear-gradient(to bottom, #120b05, #2a1708, #120b05);
+
+    color: white;
+
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+
+nav{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 8%;
+
+    background: rgba(0,0,0,0.35);
+
+    backdrop-filter: blur(10px);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 999;
+}
+
+nav h2{
+    color: #f5c96a;
+    font-size: 28px;
+}
+
+nav a{
+    text-decoration: none;
+
+    color: white;
+
+    border: 1px solid #f5c96a;
+
+    padding: 10px 22px;
+
+    border-radius: 30px;
+
+    transition: 0.4s;
+}
+
+nav a:hover{
+    background: #f5c96a;
+    color: #120b05;
+
+    transform: scale(1.08);
+}
+
+/* GALLERY */
+
+.gallery-section{
+    width: 90%;
+    margin: 70px auto;
+}
+
+.gallery{
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+
+    gap: 25px;
+}
+
+/* IMAGE CARD */
+
+.image-card{
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    position: relative;
+
+    cursor: pointer;
+
+    transition: 0.5s;
+}
+
+.image-card img{
+    width: 100%;
+    height: 400px;
+
+    object-fit: cover;
+
+    transition: 0.7s;
+}
+
+/* تأثير التكبير */
+
+.gallery:hover .image-card{
+    filter: blur(4px) brightness(0.6);
+}
+
+.gallery .image-card:hover{
+    filter: blur(0) brightness(1);
+    transform: scale(1.04);
+
+    z-index: 2;
+}
+
+.gallery .image-card:hover img{
+    transform: scale(1.15);
+}
+
+/* INFO SECTION */
+
+.info-section{
+    width: 85%;
+    margin: 80px auto;
+
+    text-align: center;
+
+    animation: fadeUp 1.2s ease;
+}
+
+.info-section h1{
+    font-size: 70px;
+
+    color: #f5c96a;
+
+    margin-bottom: 30px;
+
+    text-shadow: 0 0 20px rgba(245,201,106,0.4);
+}
+
+.info-section p{
+    font-size: 22px;
+
+    color: #ddd;
+
+    line-height: 2.2;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top: 80px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background: rgba(0,0,0,0.4);
+
+    color: #aaa;
+
+    font-size: 18px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+    from{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .info-section h1{
+        font-size: 45px;
+    }
+
+    .info-section p{
+        font-size: 18px;
+        line-height: 1.9;
+    }
+
+}
